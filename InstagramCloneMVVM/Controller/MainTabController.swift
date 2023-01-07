@@ -32,7 +32,7 @@ class MainTabController: UITabBarController {
         let notification  = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "like_unselected"), selectedImage: #imageLiteral(resourceName: "like_selected"), rootViewController: NotificationController())
         let profile       = templateNavigationController(unselectedImage: #imageLiteral(resourceName: "profile_unselected"), selectedImage: #imageLiteral(resourceName: "profile_selected"), rootViewController: ProfileController())
         
-        viewControllers = [feed, search, imageSelector, notification, profile]
+        viewControllers  = [feed, search, imageSelector, notification, profile]
         tabBar.tintColor = .black
         
     }
@@ -40,9 +40,9 @@ class MainTabController: UITabBarController {
     func templateNavigationController (unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         
         let nav = UINavigationController(rootViewController: rootViewController)
-        nav.tabBarItem.image = unselectedImage
+        nav.tabBarItem.image         = unselectedImage
         nav.tabBarItem.selectedImage = selectedImage
-        nav.navigationBar.tintColor = .black
+        nav.navigationBar.tintColor  = .black
         
         return nav
         
