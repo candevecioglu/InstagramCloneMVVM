@@ -77,7 +77,6 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Helpers
-    
     func configureUI () {
         
         view.backgroundColor = .systemBrown
