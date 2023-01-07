@@ -5,4 +5,13 @@
 //  Created by M. Can Devecioğlu on 20.11.2022.
 //
 
-import Foundation
+import UIKit
+
+class SearchController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .systemYellow
+    }
+}
