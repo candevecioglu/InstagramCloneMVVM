@@ -18,12 +18,6 @@ class CustomTextField: UITextField {
         leftView = spacer
         leftViewMode = .always
         
-        let spacer2 = UIView()
-        spacer2.backgroundColor = .white
-        spacer2.setDimensions(height: 50, width: 12)
-        rightView = spacer2
-        rightViewMode = .whileEditing
-        
         borderStyle = .none
         textColor = .white
         keyboardAppearance = .dark
