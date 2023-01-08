@@ -49,6 +49,7 @@ class LoginController: UIViewController {
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         button.attributedTitle(firstPart: "Don't have an account?", secondPart: "Sign Up!")
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -60,6 +61,15 @@ class LoginController: UIViewController {
         
     }
     
+    // MARK: - Actions
+    @objc func handleShowSignUp() {
+        
+        let controller = RegisterController()
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    
     // MARK: - Helpers
     func configureUI () {
         
@@ -67,11 +77,7 @@ class LoginController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
         
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        configureGradientLayer()
         
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
