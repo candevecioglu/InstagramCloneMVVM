@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD252F6D296AC3A90034E092 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F6C296AC3A90034E092 /* AuthenticationViewModel.swift */; };
 		DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C3292A1686003495A9 /* AppDelegate.swift */; };
 		DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C5292A1686003495A9 /* SceneDelegate.swift */; };
 		DDF346C8292A1686003495A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C7292A1686003495A9 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD252F6C296AC3A90034E092 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DDF346C0292A1686003495A9 /* InstagramCloneMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF346C3292A1686003495A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF346C5292A1686003495A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		DDF346D9292A16D6003495A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD252F6C296AC3A90034E092 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				DDF346EF292AB834003495A9 /* LoginController.swift in Sources */,
 				DDF346EA292A81AA003495A9 /* FeedCell.swift in Sources */,
 				DDF346E4292A18A5003495A9 /* ImageSelectorController.swift in Sources */,
+				DD252F6D296AC3A90034E092 /* AuthenticationViewModel.swift in Sources */,
 				DDF346E6292A18AF003495A9 /* NotificationController.swift in Sources */,
 				DDF346E2292A189B003495A9 /* SearchController.swift in Sources */,
 				DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */,
