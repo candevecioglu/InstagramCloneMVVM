@@ -12,6 +12,7 @@ class RegisterController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegisterationViewModel()
+    private var profileImage: UIImage?
     
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -36,7 +37,7 @@ class RegisterController: UIViewController {
     private let fullnameTextField = CustomTextField(placeholder: "Fullname")
     private let usernameTextField = CustomTextField(placeholder: "Username")
     
-    private let signUpButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -45,6 +46,7 @@ class RegisterController: UIViewController {
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -66,6 +68,30 @@ class RegisterController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @objc func handleSignUp () {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let profileImage = self.profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email,
+                                          password: password,
+                                          fullname: fullname,
+                                          username: username,
+                                          profileImage: profileImage)
+        
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+            print("DEBUG: Register is okey :)")
+        }
+    }
     
     @objc func handleShowLogIn () {
         navigationController?.popViewController(animated: true)
@@ -145,6 +171,8 @@ extension RegisterController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
+        
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor
