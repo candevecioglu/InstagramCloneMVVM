@@ -12,6 +12,8 @@
 		DD252F6F296AEDED0034E092 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD252F6E296AEDED0034E092 /* GoogleService-Info.plist */; };
 		DD252F71296C7F290034E092 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F70296C7F290034E092 /* ImageUploader.swift */; };
 		DD252F73296C7F310034E092 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F72296C7F310034E092 /* AuthService.swift */; };
+		DD252F75296DBECA0034E092 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F74296DBECA0034E092 /* ProfileCell.swift */; };
+		DD252F77296DBED40034E092 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F76296DBED40034E092 /* ProfileHeader.swift */; };
 		DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C3292A1686003495A9 /* AppDelegate.swift */; };
 		DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C5292A1686003495A9 /* SceneDelegate.swift */; };
 		DDF346C8292A1686003495A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C7292A1686003495A9 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		DD252F6E296AEDED0034E092 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/Flight School Guide to Swift Numbers/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD252F70296C7F290034E092 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DD252F72296C7F310034E092 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		DD252F74296DBECA0034E092 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		DD252F76296DBED40034E092 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		DDF346C0292A1686003495A9 /* InstagramCloneMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF346C3292A1686003495A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF346C5292A1686003495A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DD252F78296DBEDD0034E092 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD252F74296DBECA0034E092 /* ProfileCell.swift */,
+				DD252F76296DBED40034E092 /* ProfileHeader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		DDF346B7292A1686003495A9 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +151,7 @@
 		DDF346D8292A16D4003495A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD252F78296DBEDD0034E092 /* Profile */,
 				DDF346E9292A81AA003495A9 /* FeedCell.swift */,
 				DDF346F2292ABEC2003495A9 /* CustomTextField.swift */,
 			);
@@ -309,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF346F3292ABEC2003495A9 /* CustomTextField.swift in Sources */,
+				DD252F77296DBED40034E092 /* ProfileHeader.swift in Sources */,
 				DDF346C8292A1686003495A9 /* ViewController.swift in Sources */,
 				DDF346F1292AB83D003495A9 /* RegisterController.swift in Sources */,
 				DDF346EF292AB834003495A9 /* LoginController.swift in Sources */,
@@ -323,6 +338,7 @@
 				DDF346DE292A1760003495A9 /* MainTabController.swift in Sources */,
 				DD252F71296C7F290034E092 /* ImageUploader.swift in Sources */,
 				DD252F73296C7F310034E092 /* AuthService.swift in Sources */,
+				DD252F75296DBECA0034E092 /* ProfileCell.swift in Sources */,
 				DDF346EC292A825B003495A9 /* Extensions.swift in Sources */,
 				DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */,
 			);
