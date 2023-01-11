@@ -13,6 +13,7 @@ class RegisterController: UIViewController {
     
     private var viewModel = RegisterationViewModel()
     private var profileImage: UIImage?
+    weak var delegate: AuthenticationDelegate?
     
     private lazy var plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -88,7 +89,7 @@ class RegisterController: UIViewController {
                 return
             }
             
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationDidComplete()
             print("DEBUG: Register is okey :)")
         }
     }

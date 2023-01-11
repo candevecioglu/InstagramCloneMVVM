@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol AuthenticationDelegate: AnyObject {
+    func authenticationDidComplete()
+}
+
 class LoginController: UIViewController {
     
     // MARK: - Properties
     
     private var viewModel = LoginViewModel()
+    weak var delegate: AuthenticationDelegate?
     
     private let iconImage : UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
@@ -73,17 +78,19 @@ class LoginController: UIViewController {
         guard let password = passwordTextField.text else { return }
         AuthService.logUserIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                print("DEBUG: Failed to login user \(error.localizedDescription)")
                 return
             }
             
-            self.dismiss(animated: true, completion: nil)
+            self.delegate?.authenticationDidComplete()
+            
         }
     }
     
     @objc func handleShowSignUp() {
         
         let controller = RegisterController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     
