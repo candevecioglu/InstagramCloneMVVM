@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 private let cellIdentifier = "ProfileCell"
 private let headerIdentifier = "ProfileHeader"
@@ -32,6 +34,7 @@ class ProfileController: UICollectionViewController {
         
         configureCollectionView()
 
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
         
     }
     
@@ -49,6 +52,19 @@ class ProfileController: UICollectionViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: headerIdentifier)
         navigationItem.title = user.username
+    }
+    
+    @objc func handleLogOut () {
+        do {
+            try Auth.auth().signOut()
+            let controller = LoginController()
+            controller.delegate = self.tabBarController as? MainTabController
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("DEBUG: Failed to sign out")
+        }
     }
     
 }
