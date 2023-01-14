@@ -33,8 +33,6 @@ class SearchController: UITableViewController {
         fetchUsers()
         configureSearchController ()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
-        
         navigationItem.title = "Search"
         
     }
@@ -51,19 +49,6 @@ class SearchController: UITableViewController {
     }
     
     // MARK: - Helpers
-    
-    @objc func handleLogOut () {
-        do {
-            try Auth.auth().signOut()
-            let controller = LoginController()
-            controller.delegate = self.tabBarController as? MainTabController
-            let nav = UINavigationController(rootViewController: controller)
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: true, completion: nil)
-        } catch {
-            print("DEBUG: Failed to sign out")
-        }
-    }
     
     func configureTableView() {
         
