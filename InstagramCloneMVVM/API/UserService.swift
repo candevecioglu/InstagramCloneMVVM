@@ -9,6 +9,8 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 
+typealias FireStoreCompletion = (Error?) -> Void
+
 struct UserService {
     
     static func fetchUser (completion: @escaping(User) -> Void) {
@@ -34,11 +36,16 @@ struct UserService {
         }
     }
     
-    static func follow () {
+    static func follow (uid: String, completion: @escaping(FireStoreCompletion)) {
+        
+        guard let currentUID = Auth.auth().currentUser?.uid else { return }
+        COLLECTION_FOLLOWING.document(currentUID).collection("user-following").document(uid).setData([:]) { error in
+            COLLECTION_FOLLOWERS.document(uid).collection("user-followers").document(currentUID).setData([:], completion: completion)
+        }
         
     }
     
-    static func unfollow () {
+    static func unfollow (uid: String, completion: @escaping(FireStoreCompletion)) {
         
     }
     
