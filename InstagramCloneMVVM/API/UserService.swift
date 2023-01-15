@@ -34,6 +34,14 @@ struct UserService {
         }
     }
     
+    static func follow () {
+        
+    }
+    
+    static func unfollow () {
+        
+    }
+    
     
     
 }
