@@ -46,7 +46,7 @@ struct UserService {
     }
     
     static func unfollow (uid: String, completion: @escaping(FireStoreCompletion)) {
-        
+        #warning("Will be completed")
         guard let currentUID = Auth.auth().currentUser?.uid else { return }
         COLLECTION_FOLLOWING.document(currentUID).collection("user-following").document(uid).setData([:]) { error in
             COLLECTION_FOLLOWERS.document(uid).collection("user-followers").document(currentUID).setData([:], completion: completion)
