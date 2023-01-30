@@ -16,12 +16,20 @@ class FeedController: UICollectionViewController {
     
     // MARK: - Lifecycle
     
+    private var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchPosts()
     }
     
     // MARK: - Actions
+    
+    @objc func handleRefresh () {
+        posts.removeAll()
+        fetchPosts()
+    }
     
     @objc func handleLogOut () {
         do {
@@ -36,6 +44,16 @@ class FeedController: UICollectionViewController {
         }
     }
     
+    // MARK: - API
+    
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.refreshControl?.endRefreshing()
+            self.collectionView.reloadData()
+        }
+    }
+    
     // MARK: - Helpers
     
     func configureUI () {
@@ -46,6 +64,10 @@ class FeedController: UICollectionViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogOut))
         
         navigationItem.title = "Feed"
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refresher
     }
     
 }
@@ -55,11 +77,12 @@ class FeedController: UICollectionViewController {
 extension FeedController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FeedCell
+        cell.viewModel = PostViewModel(post: posts[indexPath.row])
         return cell
     }
     

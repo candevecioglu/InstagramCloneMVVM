@@ -7,15 +7,26 @@
 
 import UIKit
 
+protocol UploadPostControllerDelegate: class {
+    func controllerDidFinishUploadPost(_ controller: UploadPostController)
+}
+
 class UploadPostController: UIViewController {
     
     // MARK: - Properties
+    
+    weak var delegate: UploadPostControllerDelegate?
+    
+    var currentUser: User?
+    
+    var selectedImage: UIImage? {
+        didSet { photoImageView.image = selectedImage }
+    }
     
     private let photoImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "venom-8")
         
         return iv
     }()
@@ -52,7 +63,22 @@ class UploadPostController: UIViewController {
     }
     
     @objc func didTapDone() {
-        print("DEBUG: Share button pressed")
+        guard let image = selectedImage else { return }
+        guard let caption = captionTextView.text else { return }
+        guard let user = currentUser else { return }
+        
+        showLoader(true)
+        
+        PostService.uploadPost(caption: caption, image: image, user: user) { error in
+            self.showLoader(false)
+            if let error = error {
+                print("DEBUG: Failed to upload post with error \(error.localizedDescription)")
+                return
+            }
+            
+            self.delegate?.controllerDidFinishUploadPost(self)
+            
+        }
     }
     
     
@@ -86,7 +112,7 @@ class UploadPostController: UIViewController {
         captionTextView.anchor(top: photoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 12, paddingRight: 12, height: 64)
         
         view.addSubview(charCountLabel)
-        charCountLabel.anchor(bottom: captionTextView.bottomAnchor, right: view.rightAnchor, paddingRight: 12)
+        charCountLabel.anchor(bottom: captionTextView.bottomAnchor, right: view.rightAnchor, paddingBottom: -8, paddingRight: 12)
         
     }
 }

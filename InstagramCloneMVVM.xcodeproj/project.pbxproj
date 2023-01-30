@@ -22,6 +22,9 @@
 		DD252F842971EA760034E092 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD252F832971EA760034E092 /* UserCellViewModel.swift */; };
 		DDCF16B02985B45800DAADA7 /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16AF2985B45800DAADA7 /* UploadPostController.swift */; };
 		DDCF16B22985B72800DAADA7 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16B12985B72800DAADA7 /* InputTextView.swift */; };
+		DDCF16B429866A3A00DAADA7 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16B329866A3A00DAADA7 /* PostService.swift */; };
+		DDCF16B629868A3600DAADA7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16B529868A3600DAADA7 /* Post.swift */; };
+		DDCF16B829879CC100DAADA7 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16B729879CC100DAADA7 /* PostViewModel.swift */; };
 		DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C3292A1686003495A9 /* AppDelegate.swift */; };
 		DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C5292A1686003495A9 /* SceneDelegate.swift */; };
 		DDF346C8292A1686003495A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C7292A1686003495A9 /* ViewController.swift */; };
@@ -58,6 +61,9 @@
 		DD252F832971EA760034E092 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		DDCF16AF2985B45800DAADA7 /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		DDCF16B12985B72800DAADA7 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		DDCF16B329866A3A00DAADA7 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		DDCF16B529868A3600DAADA7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DDCF16B729879CC100DAADA7 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		DDF346C0292A1686003495A9 /* InstagramCloneMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF346C3292A1686003495A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF346C5292A1686003495A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DD252F7D296F18C80034E092 /* User.swift */,
+				DDCF16B529868A3600DAADA7 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 				DD252F6C296AC3A90034E092 /* AuthenticationViewModel.swift */,
 				DD252F7F296F26880034E092 /* ProfileHeaderViewModel.swift */,
 				DD252F832971EA760034E092 /* UserCellViewModel.swift */,
+				DDCF16B729879CC100DAADA7 /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				DD252F70296C7F290034E092 /* ImageUploader.swift */,
 				DD252F72296C7F310034E092 /* AuthService.swift */,
 				DD252F79296F15DF0034E092 /* UserService.swift */,
+				DDCF16B329866A3A00DAADA7 /* PostService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCF16B829879CC100DAADA7 /* PostViewModel.swift in Sources */,
 				DDF346F3292ABEC2003495A9 /* CustomTextField.swift in Sources */,
 				DD252F77296DBED40034E092 /* ProfileHeader.swift in Sources */,
 				DDCF16B02985B45800DAADA7 /* UploadPostController.swift in Sources */,
@@ -368,7 +378,9 @@
 				DDF346E0292A188E003495A9 /* FeedController.swift in Sources */,
 				DDF346DE292A1760003495A9 /* MainTabController.swift in Sources */,
 				DD252F71296C7F290034E092 /* ImageUploader.swift in Sources */,
+				DDCF16B629868A3600DAADA7 /* Post.swift in Sources */,
 				DD252F73296C7F310034E092 /* AuthService.swift in Sources */,
+				DDCF16B429866A3A00DAADA7 /* PostService.swift in Sources */,
 				DD252F7A296F15DF0034E092 /* UserService.swift in Sources */,
 				DD252F75296DBECA0034E092 /* ProfileCell.swift in Sources */,
 				DDF346EC292A825B003495A9 /* Extensions.swift in Sources */,
