@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FeedCellDelegate: class {
+    func cell(_ cell: FeedCell, wantsToCommentsFor post: Post)
+}
+
 class FeedCell: UICollectionViewCell {
     
     // MARK: - Properties
@@ -14,6 +18,8 @@ class FeedCell: UICollectionViewCell {
     var viewModel: PostViewModel? {
         didSet { configure() }
     }
+    
+    weak var delegate: FeedCellDelegate?
     
     private let profileImageView: UIImageView = {
        let iv = UIImageView()
@@ -53,6 +59,7 @@ class FeedCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "comment"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(didTapComments), for: .touchUpInside)
         return button
     }()
     
@@ -72,6 +79,7 @@ class FeedCell: UICollectionViewCell {
     private let captionLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -104,13 +112,13 @@ class FeedCell: UICollectionViewCell {
         
         postImageView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
         
-        configureActionButtons ()
+        configureActionButtons()
         
         addSubview(likesLabel)
         likesLabel.anchor(top: likeButton.bottomAnchor, left: leftAnchor, paddingTop: -4, paddingLeft: 8)
         
         addSubview(captionLabel)
-        captionLabel.anchor(top: likesLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
+        captionLabel.anchor(top: likesLabel.bottomAnchor, left: safeAreaLayoutGuide.leftAnchor, right: safeAreaLayoutGuide.rightAnchor, paddingTop: 8, paddingLeft: 8)
         
         addSubview(postTimeLabel)
         postTimeLabel.anchor(top: captionLabel.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
@@ -124,9 +132,13 @@ class FeedCell: UICollectionViewCell {
     // MARK: - Actions
     
     @objc func didTapUsername () {
-        
         print("DEBUG: Did tap username")
+    }
+    
+    @objc func didTapComments () {
         
+        guard let viewModel = viewModel else { return }
+        delegate?.cell(self, wantsToCommentsFor: viewModel.post)
     }
     
     // MARK: - Helpers
