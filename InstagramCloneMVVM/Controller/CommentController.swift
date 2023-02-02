@@ -13,6 +13,14 @@ class CommentController: UICollectionViewController {
     
     // MARK: - Properties
     
+    private lazy var commentInputView: CommentInputAccesoryView = {
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        let cv = CommentInputAccesoryView(frame: frame)
+        cv.delegate = self
+        
+        return cv
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -20,15 +28,35 @@ class CommentController: UICollectionViewController {
         configureCollectionView()
     }
     
+    override var inputAccessoryView: UIView? {
+        get { return commentInputView }
+    }
     
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
     
     // MARK: - Helpers
     
     func configureCollectionView() {
-        collectionView.register(CommentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView.backgroundColor = .white
-        
         navigationItem.title = "Comments"
+        collectionView.backgroundColor = .white
+        collectionView.register(CommentCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        collectionView.alwaysBounceVertical = true
+        collectionView.keyboardDismissMode = .interactive
+        
+        
     }
     
 }
@@ -37,12 +65,12 @@ class CommentController: UICollectionViewController {
 
 extension CommentController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
+        
         return cell
     }
 }
@@ -60,5 +88,19 @@ extension CommentController: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDataSource
 
 extension CommentController {
+    
+}
+
+// MARK: - CommentInputAccesoryViewDelegate
+
+extension CommentController: CommentInputAccesoryViewDelegate {
+   
+    func inputView(_ inputView: CommentInputAccesoryView, wantsToUploadComment comment: String) {
+        print("DEBUG: Comment is \(comment)")
+        inputView.clearCommentTextView()
+    }
+    
+    
+    
     
 }
