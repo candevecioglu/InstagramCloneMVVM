@@ -13,8 +13,8 @@ typealias FireStoreCompletion = (Error?) -> Void
 
 struct UserService {
     
-    static func fetchUser (completion: @escaping(User) -> Void) {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+    static func fetchUser (withUID uid: String, completion: @escaping(User) -> Void) {
+        //guard let uid = Auth.auth().currentUser?.uid else { return }
         COLLECTION_USERS.document(uid).getDocument { snapshot, error in
             guard let getDictionary = snapshot?.data() else { return }
             

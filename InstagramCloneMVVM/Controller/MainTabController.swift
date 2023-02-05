@@ -12,7 +12,7 @@ import YPImagePicker
 
 class MainTabController: UITabBarController {
     
-    private var user: User? {
+    var user: User? {
         didSet {
             guard let user = user else { return }
             configureViewControllers(withUser: user)
@@ -32,7 +32,8 @@ class MainTabController: UITabBarController {
     // MARK: - API
     
     func fetchUser () {
-        UserService.fetchUser { user in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+                UserService.fetchUser(withUID: uid) { user in
             self.user = user
         }
     }

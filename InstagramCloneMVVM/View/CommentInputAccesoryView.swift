@@ -71,7 +71,7 @@ class CommentInputAccesoryView: UIView {
     // MARK: - Actions
     
     @objc func handlePostTapped() {
-        delegate?.inputView(self, wantsToUploadComment: commentTextView.text)
+            delegate?.inputView(self, wantsToUploadComment: commentTextView.text)
     }
     
     // MARK: - Helpers
