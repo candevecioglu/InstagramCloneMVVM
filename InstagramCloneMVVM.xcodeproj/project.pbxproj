@@ -28,6 +28,11 @@
 		DDCF16BA298996FE00DAADA7 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16B9298996FE00DAADA7 /* CommentController.swift */; };
 		DDCF16BC2989981300DAADA7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16BB2989981300DAADA7 /* CommentCell.swift */; };
 		DDCF16BE298C332E00DAADA7 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16BD298C332E00DAADA7 /* CommentInputAccesoryView.swift */; };
+		DDCF16C0298E635F00DAADA7 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16BF298E635F00DAADA7 /* CommentService.swift */; };
+		DDCF16C2298E667000DAADA7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C1298E667000DAADA7 /* Comment.swift */; };
+		DDCF16C4298E6A6C00DAADA7 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */; };
+		DDCF16C629900D6C00DAADA7 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C529900D6C00DAADA7 /* NotificationCell.swift */; };
+		DDCF16C829904DD200DAADA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C729904DD200DAADA7 /* Notification.swift */; };
 		DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C3292A1686003495A9 /* AppDelegate.swift */; };
 		DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C5292A1686003495A9 /* SceneDelegate.swift */; };
 		DDF346C8292A1686003495A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C7292A1686003495A9 /* ViewController.swift */; };
@@ -70,6 +75,11 @@
 		DDCF16B9298996FE00DAADA7 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
 		DDCF16BB2989981300DAADA7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		DDCF16BD298C332E00DAADA7 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
+		DDCF16BF298E635F00DAADA7 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		DDCF16C1298E667000DAADA7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		DDCF16C529900D6C00DAADA7 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		DDCF16C729904DD200DAADA7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DDF346C0292A1686003495A9 /* InstagramCloneMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF346C3292A1686003495A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF346C5292A1686003495A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +184,8 @@
 			children = (
 				DD252F7D296F18C80034E092 /* User.swift */,
 				DDCF16B529868A3600DAADA7 /* Post.swift */,
+				DDCF16C1298E667000DAADA7 /* Comment.swift */,
+				DDCF16C729904DD200DAADA7 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +199,7 @@
 				DD252F812970804F0034E092 /* UserCell.swift */,
 				DDCF16BB2989981300DAADA7 /* CommentCell.swift */,
 				DDCF16BD298C332E00DAADA7 /* CommentInputAccesoryView.swift */,
+				DDCF16C529900D6C00DAADA7 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 				DD252F7F296F26880034E092 /* ProfileHeaderViewModel.swift */,
 				DD252F832971EA760034E092 /* UserCellViewModel.swift */,
 				DDCF16B729879CC100DAADA7 /* PostViewModel.swift */,
+				DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +239,7 @@
 				DD252F72296C7F310034E092 /* AuthService.swift */,
 				DD252F79296F15DF0034E092 /* UserService.swift */,
 				DDCF16B329866A3A00DAADA7 /* PostService.swift */,
+				DDCF16BF298E635F00DAADA7 /* CommentService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -364,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCF16C4298E6A6C00DAADA7 /* CommentViewModel.swift in Sources */,
 				DDCF16B829879CC100DAADA7 /* PostViewModel.swift in Sources */,
 				DDF346F3292ABEC2003495A9 /* CustomTextField.swift in Sources */,
 				DD252F77296DBED40034E092 /* ProfileHeader.swift in Sources */,
@@ -373,6 +389,9 @@
 				DDF346F1292AB83D003495A9 /* RegisterController.swift in Sources */,
 				DDF346EF292AB834003495A9 /* LoginController.swift in Sources */,
 				DDF346EA292A81AA003495A9 /* FeedCell.swift in Sources */,
+				DDCF16C0298E635F00DAADA7 /* CommentService.swift in Sources */,
+				DDCF16C2298E667000DAADA7 /* Comment.swift in Sources */,
+				DDCF16C829904DD200DAADA7 /* Notification.swift in Sources */,
 				DDF346E4292A18A5003495A9 /* ImageSelectorController.swift in Sources */,
 				DD252F6D296AC3A90034E092 /* AuthenticationViewModel.swift in Sources */,
 				DD252F822970804F0034E092 /* UserCell.swift in Sources */,
@@ -395,6 +414,7 @@
 				DD252F7A296F15DF0034E092 /* UserService.swift in Sources */,
 				DD252F75296DBECA0034E092 /* ProfileCell.swift in Sources */,
 				DDF346EC292A825B003495A9 /* Extensions.swift in Sources */,
+				DDCF16C629900D6C00DAADA7 /* NotificationCell.swift in Sources */,
 				DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */,
 				DDCF16BC2989981300DAADA7 /* CommentCell.swift in Sources */,
 			);
