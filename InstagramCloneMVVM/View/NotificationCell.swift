@@ -17,7 +17,6 @@ class NotificationCell: UITableViewCell {
         iv.clipsToBounds = true
         iv.backgroundColor = .lightGray
         iv.image = #imageLiteral(resourceName: "venom-7")
-        
         return iv
     }()
     
@@ -38,7 +37,6 @@ class NotificationCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handlePostTapped))
         iv.isUserInteractionEnabled = true
         iv.addGestureRecognizer(tap)
-        
         return iv
     }()
     

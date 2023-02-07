@@ -18,8 +18,8 @@ enum NotificationType: Int {
     
     var notificationMessage: String {
         switch self {
-        case .like: return " liked your post."
-        case .follow: return " started following you."
+        case .like   : return " liked your post."
+        case .follow : return " started following you."
         case .comment: return " commented on your post."
         }
     }
@@ -35,11 +35,11 @@ struct Notification {
     let id: String
     
     init(dictionary: [String : Any]) {
-        self.timeStamp = dictionary["timeStamp"] as? Timestamp ?? Timestamp(date: Date())
-        self.id = dictionary["id"] as? String ?? ""
-        self.uid = dictionary["uid"] as? String ?? ""
-        self.postID = dictionary["postID"] as? String ?? ""
+        self.timeStamp    = dictionary["timeStamp"] as? Timestamp ?? Timestamp(date: Date())
+        self.id           = dictionary["id"] as? String ?? ""
+        self.uid          = dictionary["uid"] as? String ?? ""
+        self.postID       = dictionary["postID"] as? String ?? ""
         self.postImageURL = dictionary["postImageURL"] as? String ?? ""
-        self.type = NotificationType(rawValue : dictionary["type"] as? Int ?? 0) ?? .like
+        self.type         = NotificationType(rawValue : dictionary["type"] as? Int ?? 0) ?? .like
     }
 }

@@ -13,6 +13,7 @@ class NotificationController: UITableViewController {
     
     // MARK: - Properties
     
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
