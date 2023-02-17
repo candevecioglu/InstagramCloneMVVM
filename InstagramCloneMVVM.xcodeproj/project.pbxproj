@@ -33,6 +33,8 @@
 		DDCF16C4298E6A6C00DAADA7 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */; };
 		DDCF16C629900D6C00DAADA7 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C529900D6C00DAADA7 /* NotificationCell.swift */; };
 		DDCF16C829904DD200DAADA7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C729904DD200DAADA7 /* Notification.swift */; };
+		DDCF16CA299FDB4500DAADA7 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16C9299FDB4500DAADA7 /* NotificationService.swift */; };
+		DDCF16CC29A0070200DAADA7 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF16CB29A0070200DAADA7 /* NotificationViewModel.swift */; };
 		DDF346C4292A1686003495A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C3292A1686003495A9 /* AppDelegate.swift */; };
 		DDF346C6292A1686003495A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C5292A1686003495A9 /* SceneDelegate.swift */; };
 		DDF346C8292A1686003495A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF346C7292A1686003495A9 /* ViewController.swift */; };
@@ -80,6 +82,8 @@
 		DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		DDCF16C529900D6C00DAADA7 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		DDCF16C729904DD200DAADA7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DDCF16C9299FDB4500DAADA7 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		DDCF16CB29A0070200DAADA7 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		DDF346C0292A1686003495A9 /* InstagramCloneMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramCloneMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF346C3292A1686003495A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDF346C5292A1686003495A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				DD252F832971EA760034E092 /* UserCellViewModel.swift */,
 				DDCF16B729879CC100DAADA7 /* PostViewModel.swift */,
 				DDCF16C3298E6A6C00DAADA7 /* CommentViewModel.swift */,
+				DDCF16CB29A0070200DAADA7 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 				DD252F79296F15DF0034E092 /* UserService.swift */,
 				DDCF16B329866A3A00DAADA7 /* PostService.swift */,
 				DDCF16BF298E635F00DAADA7 /* CommentService.swift */,
+				DDCF16C9299FDB4500DAADA7 /* NotificationService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCF16C4298E6A6C00DAADA7 /* CommentViewModel.swift in Sources */,
+				DDCF16CC29A0070200DAADA7 /* NotificationViewModel.swift in Sources */,
 				DDCF16B829879CC100DAADA7 /* PostViewModel.swift in Sources */,
 				DDF346F3292ABEC2003495A9 /* CustomTextField.swift in Sources */,
 				DD252F77296DBED40034E092 /* ProfileHeader.swift in Sources */,
@@ -407,6 +414,7 @@
 				DDF346E0292A188E003495A9 /* FeedController.swift in Sources */,
 				DDF346DE292A1760003495A9 /* MainTabController.swift in Sources */,
 				DD252F71296C7F290034E092 /* ImageUploader.swift in Sources */,
+				DDCF16CA299FDB4500DAADA7 /* NotificationService.swift in Sources */,
 				DDCF16B629868A3600DAADA7 /* Post.swift in Sources */,
 				DD252F73296C7F310034E092 /* AuthService.swift in Sources */,
 				DDCF16B429866A3A00DAADA7 /* PostService.swift in Sources */,
