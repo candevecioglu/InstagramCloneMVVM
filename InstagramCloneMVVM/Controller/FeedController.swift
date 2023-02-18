@@ -32,8 +32,10 @@ class FeedController: UICollectionViewController {
     // MARK: - Actions
     
     @objc func handleRefresh () {
+        
         posts.removeAll()
         fetchPosts()
+        
     }
     
     @objc func handleLogOut () {

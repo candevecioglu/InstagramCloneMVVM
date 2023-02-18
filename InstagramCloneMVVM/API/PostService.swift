@@ -48,12 +48,20 @@ struct PostService {
             guard let documents = snapshot?.documents else { return }
             
             var posts = documents.map( { Post(postID: $0.documentID, dictionary: $0.data()) } )
-            
             posts.sort { (post1, post2) -> Bool in
                 return post1.timeStamp.seconds > post2.timeStamp.seconds
             }
             
             completion(posts)
+        }
+    }
+    
+    static func fetchPost(withPostID postID: String, completion: @escaping(Post) -> Void) {
+        COLLECTION_POSTS.document(postID).getDocument { snapshot, _ in
+            guard let snapshot = snapshot else { return }
+            guard let data = snapshot.data() else { return }
+            let post = Post(postID: snapshot.documentID, dictionary: data)
+            completion(post)
         }
     }
     
