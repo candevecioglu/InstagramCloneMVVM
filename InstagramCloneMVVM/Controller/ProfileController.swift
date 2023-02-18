@@ -19,11 +19,15 @@ class ProfileController: UICollectionViewController {
     private var user: User
     private var posts = [Post]()
     
+    let refresher = UIRefreshControl()
+    
     // MARK: - Lifecycle
     
     init(user: User) {
         self.user = user
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
+     
+        
     }
     
     required init?(coder: NSCoder) {
@@ -64,9 +68,19 @@ class ProfileController: UICollectionViewController {
             self.collectionView.reloadData()
         }
     }
-
     
+
     // MARK: - Helpers
+    
+    //
+    @objc func handleRefresh () {
+        
+        posts.removeAll()
+        fetchPosts()
+        collectionView.reloadData()
+        refresher.endRefreshing()
+        
+    }
     
     func configureCollectionView () {
         collectionView.backgroundColor = .white
@@ -76,6 +90,13 @@ class ProfileController: UICollectionViewController {
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: headerIdentifier)
         navigationItem.title = user.username
+        
+        //
+        
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.alwaysBounceVertical = true
+        collectionView.refreshControl = refresher
+        
     }
     
 }
