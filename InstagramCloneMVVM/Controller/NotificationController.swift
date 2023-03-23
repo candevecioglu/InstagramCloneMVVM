@@ -97,6 +97,7 @@ extension NotificationController {
         
         showLoader(true)
         
+        
         UserService.fetchUser(withUID: notifications[indexPath.row].uid) { user in
             self.showLoader(false)
             let controller = ProfileController(user: user)

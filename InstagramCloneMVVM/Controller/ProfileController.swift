@@ -62,9 +62,14 @@ class ProfileController: UICollectionViewController {
         }
     }
     
+
+    #warning("Burası incelenecek")
+    
     func fetchPosts() {
         PostService.fetchPosts(forUser: user.uid) { posts in
+            print("DEBUG: Before \(self.posts)")
             self.posts = posts
+            print("DEUBG: After \(self.posts)")
             self.collectionView.reloadData()
         }
     }

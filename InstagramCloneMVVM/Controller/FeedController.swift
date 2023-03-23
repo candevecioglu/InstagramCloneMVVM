@@ -57,6 +57,7 @@ class FeedController: UICollectionViewController {
         
         guard post == nil else { return }
         
+        
         PostService.fetchFeedPosts { posts in
             self.posts = posts
             self.collectionView.refreshControl?.endRefreshing()
